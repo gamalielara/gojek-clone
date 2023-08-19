@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gojek_clone/pages/home.dart';
+import 'package:gojek_clone/pages/home/main.dart';
 
 void main() {
   runApp(const MyApp());
