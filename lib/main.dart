@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gojek_clone/pages/home/main.dart';
+import 'package:flutter/services.dart';
+import 'package:gojek_clone/theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Gojek',
       debugShowCheckedModeBanner: false,
-      home: HomePage()
+      home: HomePage(),
     );
   }
 }

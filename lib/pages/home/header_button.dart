@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:gojek_clone/data/enum.dart';
 import 'package:gojek_clone/theme.dart';
 
 class HeaderButton extends StatelessWidget {
@@ -15,7 +14,7 @@ class HeaderButton extends StatelessWidget {
       return GestureDetector(
         onTap: () => callBackFunc(),
         child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
           decoration: BoxDecoration(
               color: Colors.white, borderRadius: BorderRadius.circular(100)),
           child: Text(

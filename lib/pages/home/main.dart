@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:gojek_clone/data/enum.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gojek_clone/pages/home/header_button.dart';
 import 'package:gojek_clone/theme.dart';
 
@@ -21,25 +22,108 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: primaryGreen,
-        elevation: 0,
-        toolbarHeight: 71,
-        title: Container(
-          padding: const EdgeInsets.all(5),
-          decoration: BoxDecoration(
-            color: darkGreen,
-            borderRadius: BorderRadius.circular(30),
-          ),
-          child: Row(
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      statusBarColor: primaryGreen,
+    ));
+
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        appBar: AppBar(
+            backgroundColor: primaryGreen,
+            elevation: 0,
+            toolbarHeight: 90,
+            title: Container(
+              padding: const EdgeInsets.all(5),
+              decoration: BoxDecoration(
+                color: darkGreen,
+                borderRadius: BorderRadius.circular(30),
+              ),
+              child: Row(
+                children: [
+                  ...buttonMaps.entries.map((entry) => HeaderButton(
+                        title: entry.value,
+                        isSelected: entry.key == selectedButton,
+                        callBackFunc: () => onNavChange(entry.key),
+                      )),
+                ],
+              ),
+            )),
+        body: SingleChildScrollView(
+          child: Column(
             children: [
-              ...buttonMaps.entries.map((entry) =>
-                  HeaderButton(
-                    title: entry.value,
-                    isSelected: entry.key == selectedButton,
-                    callBackFunc: () => onNavChange(entry.key),
-                  )),
+              Padding(
+                padding: const EdgeInsets.only(top: 23, left: 15, right: 15),
+                child: Row(
+                  children: [
+                    Flexible(
+                        // Search bar
+                        fit: FlexFit.tight,
+                        child: Container(
+                          padding: const EdgeInsets.all(5),
+                          decoration: BoxDecoration(
+                              color: light,
+                              borderRadius: BorderRadius.circular(30),
+                              border: Border.all(color: grey)),
+                          child: Row(
+                            children: [
+                              SvgPicture.asset(
+                                "assets/icons/search.svg",
+                                color: dark,
+                                width: 30,
+                                height: 30,
+                              ),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text(
+                                "Cari layanan, makanan, & tujuan",
+                                style: regular.copyWith(color: grey),
+                              )
+                            ],
+                          ),
+                        )),
+                    SizedBox(
+                      width: 15,
+                    ),
+                    SizedBox(
+                      width: 40,
+                      height: 40,
+                      child: Stack(
+                        children: [
+                          Container(
+                            width: 35,
+                            height: 35,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(40 / 2),
+                            ),
+                            clipBehavior: Clip.hardEdge,
+                            child: Image.asset(
+                              "assets/images/dog.jpg",
+                            ),
+                          ),
+                          Positioned(
+                              right: 0,
+                              bottom: 0,
+                              child: Container(
+                                width: 20,
+                                height: 20,
+                                padding: const EdgeInsets.all(1),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(40 / 2),
+                                    color: Color(0xFFD1E7EE)),
+                                clipBehavior: Clip.hardEdge,
+                                child: SvgPicture.asset(
+                                  "assets/icons/goclub.svg",
+                                  color: primaryBlue,
+                                ),
+                              ))
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              )
             ],
           ),
         ),
