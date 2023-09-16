@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:gojek_clone/pages/home/GopaySection/gopay_section.dart';
 import 'package:gojek_clone/pages/home/header_button.dart';
 import 'package:gojek_clone/theme.dart';
 
@@ -76,10 +77,15 @@ class _HomePageState extends State<HomePage> {
                               SizedBox(
                                 width: 10,
                               ),
-                              Text(
-                                "Cari layanan, makanan, & tujuan",
-                                style: regular.copyWith(color: grey),
-                              )
+                              Flexible(
+                                child: TextField(
+                                  style: regular.copyWith(
+                                      color: grey, fontSize: 12),
+                                  decoration: InputDecoration.collapsed(
+                                    hintText: "Cari layanan, mkanan & tujuan",
+                                  ),
+                                ),
+                              ),
                             ],
                           ),
                         )),
@@ -123,7 +129,8 @@ class _HomePageState extends State<HomePage> {
                     )
                   ],
                 ),
-              )
+              ),
+              GopaySection()
             ],
           ),
         ),
