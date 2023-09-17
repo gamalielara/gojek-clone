@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:gojek_clone/pages/home/GopaySection/gopay_section.dart';
+import 'package:gojek_clone/pages/home/gopay_section/main.dart';
 import 'package:gojek_clone/pages/home/header_button.dart';
+import 'package:gojek_clone/pages/home/menu_section/main.dart';
+import 'package:gojek_clone/pages/home/order_shortcut/main.dart';
 import 'package:gojek_clone/theme.dart';
 
 class HomePage extends StatefulWidget {
@@ -130,7 +132,9 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
               ),
-              GopaySection()
+              const GopaySection(),
+              MenuSection(),
+              OrderShortcut()
             ],
           ),
         ),

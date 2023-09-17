@@ -1,13 +1,8 @@
 import 'package:flutter/cupertino.dart';
-import 'package:gojek_clone/pages/home/GopaySection/gopay_box.dart';
-import 'package:gojek_clone/pages/home/GopaySection/gopay_section_button.dart';
+import 'package:gojek_clone/pages/home/gopay_section/gopay_box.dart';
+import 'package:gojek_clone/pages/home/gopay_section/gopay_section_button.dart';
 import 'package:gojek_clone/theme.dart';
-
-Map<String, String> gopaySectionButtons = {
-  "Bayar": "pay",
-  "Top Up": "topup",
-  "Eksplor": "explore"
-};
+import '../../../data/gopay_section_buttons.dart';
 
 class GopaySection extends StatelessWidget {
   const GopaySection({super.key});
