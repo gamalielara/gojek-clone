@@ -1,9 +1,9 @@
-# gojek_clone
+# Gojek Clone App
 
-Gojek Clone App
+by Ara Gamaliel
 
 ## Getting Started
 
-![Capture 1](./captures/ss-1.png)
+<img src="./captures/ss-1.png" width="300">
 
 This project is a Gojek Clone app created using Flutter.
