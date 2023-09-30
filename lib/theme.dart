@@ -7,6 +7,7 @@ Color dark = const Color(0xFF1C1C1C);
 Color darker = const Color(0xFF4A4A4A);
 Color grey = const Color(0xFF999798);
 Color light = const Color(0xFFEDEDED);
+Color superLight = const Color(0xFFF6F3F3);
 
 Color darkBlue = const Color(0xFF0281A0);
 Color primaryBlue = const Color(0xFF00AED5);
